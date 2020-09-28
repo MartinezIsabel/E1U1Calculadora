@@ -1,0 +1,62 @@
+
+package calculadora1;
+import java.util.Scanner;
+public class Calculadora1 extends Operaciones {
+    Scanner entrada=new Scanner(System.in);
+    int n;
+    Operaciones obj=new Operaciones();
+void menu(){
+    obj.datos();
+    do{
+    
+    System.out.println("¿Que opcion deseas?");
+        System.out.println("1.Resta");
+        System.out.println("2.Multiplicacion");
+        System.out.println("3.Division");
+        System.out.println("4.Suma");
+       System.out.println("5. Salir");
+        
+    
+        int op;
+        op=entrada.nextInt();
+         int sum=0; 
+        if(op<=5){
+            switch(sum=op){
+                case 1: obj.resta();
+                break;
+                
+                case 2:obj.division();
+                break;
+                
+                case 3:obj.multiplicacion();
+                break;
+                
+                case 4: obj.suma();
+                break;
+                case 5:System.exit(0);
+                break;
+                default:
+                    System.out.println("esa opcion no existe");
+                    System.exit(0);
+                    break;
+            }
+        
+        } if(op>5){
+            System.out.println("Esta opcion no existe");
+        }
+    
+        System.out.println("¿desea otra opcion?: 1. si, 2. no");
+        n=entrada.nextInt();
+        
+        
+            }while(n==1);
+    }
+
+    
+    public static void main(String[] args) {
+        Calculadora1 ob= new Calculadora1();
+        
+        ob.menu();
+    }
+    }
+    
